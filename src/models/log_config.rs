@@ -20,6 +20,8 @@ pub struct LogConfig {
     pub max_file_size_mb: Option<i32>,
     #[serde(rename = "MaxFiles", skip_serializing_if = "Option::is_none")]
     pub max_files: Option<i32>,
+    #[serde(rename = "Enabled", skip_serializing_if = "Option::is_none")]
+    pub enabled: Option<bool>,
 }
 
 impl LogConfig {
@@ -27,6 +29,7 @@ impl LogConfig {
         LogConfig {
             max_file_size_mb: None,
             max_files: None,
+            enabled: None,
         }
     }
 }
